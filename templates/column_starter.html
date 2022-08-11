@@ -1,0 +1,46 @@
+<div class="container-fluid">
+	<div class="row gx-2 ">
+
+		<div class="col-md-2 bg-info">
+			{% if page == "/stats" %}	
+			<a class="nav-link" href="{{ url_for('work_space') }}" >
+				<img src="https://i.imgur.com/4PWh3AO.jpg" class="rounded mx-auto d-block" alt="CRM">
+				Stats Hub
+			</a> 
+			{% elif page == "/work_space" %}
+			<a class="nav-link" href="{{ url_for('stats') }}" >
+				<img src="https://i.imgur.com/kwx6i3n.jpg" class="rounded mx-auto d-block" alt="HUB">
+				Workspace
+			</a> 
+			{% endif %}
+
+			{% if page == "/work_space" %}
+			<div class="row">
+				<nav class="nav flex-column mt-4">
+					<button type="button" class="btn btn-warning">Pending List</button>
+					<button type="button" class="btn btn-warning">2022 Conference List</button>
+					<button type="button" class="btn btn-warning">Sold Accounts</button>
+					<button type="button" class="btn btn-primary">New List</button>
+				</nav>
+			</div>
+			{% endif %}
+
+			<div class="fixed-bottom">				
+				<a class="nav-link text-white" href="{{ url_for('logout') }}" > <h3> Logout </h3> </a> 
+			</div>
+		</div>
+
+		<div class="col-md-10">
+			{% if page == "/stats" %}
+			{% include 'stat_page.html'%}
+			{% elif page == "/work_space" %}
+			{% include 'workspace.html'%}
+			{% endif %}	
+		</div>
+
+	</div>
+</div>
+
+
+
+
