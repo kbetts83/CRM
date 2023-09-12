@@ -1,0 +1,15 @@
+{'title': 'This I hope is my last test',
+ 'project': 'Blog', 
+ 'blog': '<p>i think ths works don&#39;t it&gt;?</p>\r\n', 
+
+ 'submit': False, 
+ 'tech_python': 'y', 
+ 'tech_mysql': 'y', 
+ 'tech_kivy': 'y',
+  'tech_html': 'y', 
+  'tech_bootstrap': 'y', \
+  'tech_git': 'y', 
+  \'knowledge_recursion': 'y',
+   'knowledge_algorithims': 'y', 
+   'knowledge_datastructures': 'y', 
+   'csrf_token': None}

@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block content%}
+
+<div class="container-fluid px-5 py-3" >
+	<p class="h2"> Admin </p>
+	<div class="container-fluid px-0 py-1" >
+		<hr class="rounded">
+		<p class="h3"> Blog </p>
+		<div class=" px-0 py-1" > <a href="{{ url_for('create_blog') }}" class="btn btn-success" role="button">Create Blog</a> </div>
+		<div>
+			<!-- set the table headers -->
+			<table class="table">
+				<thead>
+					<tr>
+						{% set post = posts[0] %} <!-- get one set of posts for the headers -->
+						{% for key, value in post.items() %}
+						<th scope="col">{{key}} </th> 
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+
+					{% for post in posts %}
+					{% for key, value in post.items() %}
+					{% if key == 'id' %}
+					<tr>
+						<th scope="row">{{post.id}}</th>
+						
+						{% else %}
+						<td> {{value}} </td>
+						{% endif %} 
+						{% endfor %}
+						<td> <a href="{{ url_for('edit_blog',id = post.id)}}"> Edit</a>
+						</td>
+						{% endfor %}
+
+					</tr>
+				</tbody>
+
+				{% endblock %}
+
+			</div>
+

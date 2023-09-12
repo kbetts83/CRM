@@ -1,0 +1,45 @@
+ {% extends "main.html" %}
+{% block content%}
+
+
+<div>
+	<form method= "POST" action ="">
+
+		{{ form.hidden_tag() }}
+
+		{{ ckeditor.load()  }}
+		
+		<div class="container-fluid px-5">
+		<h1>Create a post</h1>
+		<p>{{ form.title.label() }} {{ form.title() }} </p>
+		<p>{{ form.project.label() }} {{ form.project() }} </p>
+		<p><div class= "col-8"> {{ form.blog() }} </div></p>
+		<p> {{form.tech_python}} {{ form.tech_python.label }}
+			{{form.tech_html}} {{ form.tech_html.label }} 
+			{{form.tech_mysql}}{{ form.tech_mysql.label }} 
+			{{form.tech_kivy}} {{ form.tech_kivy.label }} 
+			{{form.tech_bootstrap}}{{ form.tech_bootstrap.label }}
+			{{form.tech_git}}{{ form.tech_git.label }}
+			{{form.knowledge_OOP}}{{ form.knowledge_OOP.label }} <!-- new starts here  -->
+			{{form.knoweldge_generators}}{{ form.knoweldge_generators.label }}
+			{{form.knoweldge_list_comprehensions}}{{ form.knoweldge_list_comprehensions.label }}
+			{{form.knoweldge_dictionary_comprehensions}}{{ form.knoweldge_dictionary_comprehensions.label }}
+			{{form.knowledge_decorators}}{{ form.knowledge_decorators.label }}
+
+			 </p>
+		<p> {{ form.knowledge_recursion }} {{ form.knowledge_recursion.label }} 
+			{{ form.knowledge_algorithims }}{{ form.knowledge_algorithims.label }}
+			{{ form.knowledge_datastructures }}{{ form.knowledge_datastructures.label }}
+			 </p>
+		{{ form.submit() }}
+
+		{{ ckeditor.load() }}
+ 		{{ ckeditor.config(name='body') }}
+
+	</form>
+</div>
+
+
+{% endblock %}
+
+
